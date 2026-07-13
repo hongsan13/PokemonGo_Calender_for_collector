@@ -1,1 +1,173 @@
-<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#18354a"><title>PoGO Collector Calendar</title><link rel="manifest" href="manifest.webmanifest"><link rel="stylesheet" href="style.css"></head><body><header><div><p class="eyebrow">TOKYO / COLLECTION MODE</p><h1>PoGO Collector Calendar</h1><p>日本・関東での再入手性を基準に、イベントをコレクション価値で評価する。</p></div><button id="refreshBtn">更新</button></header><section class="summary" id="summary"></section><nav class="filters"><button class="active" data-filter="all">すべて</button><button data-filter="ongoing">開催中</button><button data-filter="high">★4以上</button><button data-filter="limited">限定重視</button><button id="settingsBtn">評価設定</button><button id="icsBtn">ICS出力</button></nav><main><div id="status" class="status">読み込み中…</div><div id="events" class="event-list"></div></main><dialog id="settingsDialog"><form method="dialog"><h2>コレクション評価設定</h2><p class="muted">チェック済み要素は、該当イベントの優先度を下げる。</p><label><input type="checkbox" id="ownedRegionals"> 海外地域限定の通常色は概ね確保済み</label><label><input type="checkbox" id="ownedCostumes"> 衣装・帽子の通常色は1体で十分</label><label><input type="checkbox" id="ownedUnown"> アンノーン通常全28種を確保済み</label><label><input type="checkbox" id="pvpOff" checked> PvP価値を評価しない</label><label><input type="checkbox" id="tokyoPenalty" checked> 東京で恒常入手可能なら大幅減点</label><div class="dialog-actions"><button value="cancel">閉じる</button><button value="default" id="saveSettings">保存</button></div></form></dialog><footer><p>データ: Leek Duck → ScrapedDuck。非公式・非商用の個人用プロトタイプ。</p><p id="updated"></p></footer><script src="app.js"></script></body></html>
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#163748">
+  <title>PoGO Collector Calendar v2</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div>
+    <p class="eyebrow">TOKYO / COLLECTION MODE / v2.0</p>
+    <h1>PoGO Collector Calendar</h1>
+    <p>東京基準・PvP評価なし。地域限定、衣装、限定背景、専用技、色違い、復刻性を分けて評価する。</p>
+  </div>
+  <button id="refreshBtn" class="primary">更新</button>
+</header>
+
+<section id="summary" class="summary"></section>
+
+<nav class="tabs">
+  <button class="active" data-view="events">イベント</button>
+  <button data-view="dashboard">今やること</button>
+  <button data-view="collection">所持管理</button>
+  <button data-view="results">成果記録</button>
+</nav>
+
+<section id="eventsView" class="view active">
+  <div class="toolbar">
+    <div class="filters">
+      <button class="active" data-filter="all">すべて</button>
+      <button data-filter="ongoing">開催中</button>
+      <button data-filter="high">★4以上</button>
+      <button data-filter="regional">地域限定</button>
+      <button data-filter="background">限定背景</button>
+      <button data-filter="costume">衣装</button>
+      <button data-filter="shiny">色違い</button>
+      <button data-filter="special">専用技・特殊</button>
+    </div>
+    <div class="actions">
+      <button id="settingsBtn">評価設定</button>
+      <button id="icsBtn">ICS出力</button>
+    </div>
+  </div>
+  <main>
+    <div id="status" class="status">読み込み中…</div>
+    <div id="events" class="event-list"></div>
+  </main>
+</section>
+
+<section id="dashboardView" class="view">
+  <main>
+    <div class="panel">
+      <h2>今やるべきこと</h2>
+      <div id="dashboardCards" class="dashboard-grid"></div>
+    </div>
+  </main>
+</section>
+
+<section id="collectionView" class="view">
+  <main>
+    <div class="panel">
+      <div class="section-head">
+        <div>
+          <h2>所持コレクション</h2>
+          <p class="muted">イベント名や対象名と照合し、所持済みなら優先度を自動調整する。</p>
+        </div>
+        <button id="addCollectionBtn">追加</button>
+      </div>
+      <div class="collection-presets">
+        <button data-preset="アンノーン通常全28種">アンノーン全28種</button>
+        <button data-preset="トロピウス">トロピウス</button>
+        <button data-preset="バッフロン">バッフロン</button>
+        <button data-preset="ダイヤカットトリミアン">ダイヤカット</button>
+        <button data-preset="アーマードミュウツー">アーマードミュウツー</button>
+        <button data-preset="帽子ピカチュウ全種">帽子ピカ全種</button>
+      </div>
+      <div id="collectionList" class="collection-list"></div>
+    </div>
+  </main>
+</section>
+
+<section id="resultsView" class="view">
+  <main>
+    <div class="panel">
+      <div class="section-head">
+        <div>
+          <h2>イベント成果記録</h2>
+          <p class="muted">イベント後の色違い、背景、地域限定、専用技などを保存する。</p>
+        </div>
+        <button id="addResultBtn">成果を追加</button>
+      </div>
+      <div id="resultsList" class="results-list"></div>
+    </div>
+  </main>
+</section>
+
+<dialog id="settingsDialog">
+  <form method="dialog" id="settingsForm">
+    <h2>評価設定</h2>
+    <label><input type="checkbox" id="pvpOff" checked> PvP価値を評価しない</label>
+    <label><input type="checkbox" id="tokyoPenalty" checked> 東京で恒常入手可能なら減点</label>
+    <label><input type="checkbox" id="duplicatePenalty" checked> 所持済み通常色は減点</label>
+    <label><input type="checkbox" id="tradeBonus"> 交換用予備を重視する</label>
+    <label>
+      復刻性の扱い
+      <select id="rerunWeight">
+        <option value="1">標準</option>
+        <option value="1.3">強く重視</option>
+        <option value="0.7">弱く重視</option>
+      </select>
+    </label>
+    <div class="dialog-actions">
+      <button value="cancel">閉じる</button>
+      <button value="default" id="saveSettings">保存</button>
+    </div>
+  </form>
+</dialog>
+
+<dialog id="collectionDialog">
+  <form method="dialog" id="collectionForm">
+    <h2>所持アイテムを追加</h2>
+    <label>名称<input id="collectionName" required placeholder="例: 色違いアンノーンO"></label>
+    <label>分類
+      <select id="collectionType">
+        <option>通常</option>
+        <option>色違い</option>
+        <option>地域限定</option>
+        <option>衣装</option>
+        <option>限定背景</option>
+        <option>専用技</option>
+        <option>特殊フォーム</option>
+        <option>幻・伝説</option>
+      </select>
+    </label>
+    <label>保有数<input id="collectionCount" type="number" min="1" value="1"></label>
+    <label>メモ<input id="collectionNote" placeholder="例: GO Fest 2026"></label>
+    <div class="dialog-actions">
+      <button value="cancel">閉じる</button>
+      <button value="default" id="saveCollection">保存</button>
+    </div>
+  </form>
+</dialog>
+
+<dialog id="resultDialog">
+  <form method="dialog" id="resultForm">
+    <h2>イベント成果を追加</h2>
+    <label>イベント名<input id="resultName" required placeholder="例: GO Fest 2026 Global"></label>
+    <label>日付<input id="resultDate" type="date" required></label>
+    <div class="result-fields">
+      <label>色違い<input id="resultShiny" type="number" min="0" value="0"></label>
+      <label>限定背景<input id="resultBackground" type="number" min="0" value="0"></label>
+      <label>地域限定<input id="resultRegional" type="number" min="0" value="0"></label>
+      <label>専用技<input id="resultMove" type="number" min="0" value="0"></label>
+    </div>
+    <label>メモ<textarea id="resultNote" rows="4" placeholder="例: アンノーン全28種、色違いOなど"></textarea></label>
+    <div class="dialog-actions">
+      <button value="cancel">閉じる</button>
+      <button value="default" id="saveResult">保存</button>
+    </div>
+  </form>
+</dialog>
+
+<footer>
+  <p>データ: Leek Duck → ScrapedDuck。非公式・非商用の個人用ツール。</p>
+  <p id="updated"></p>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

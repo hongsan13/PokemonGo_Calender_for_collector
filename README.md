@@ -1,16 +1,29 @@
-# PoGO Collector Calendar
+# PoGO Collector Calendar v2.0
 
-東京在住・PvPなし・コレクション重視でPokémon GOイベントを評価する静的Webアプリ。
+東京在住・PvPなし・コレクション重視向けのPokémon GOイベント管理サイト。
 
-## 公開
-1. GitHubでパブリックリポジトリを作る。
-2. このフォルダの中身をアップロードする。
-3. Settings → Pages → Deploy from a branch。
-4. main / docs を選ぶ。
-5. Actionsを有効にすると6時間ごとにイベントを更新する。
+## v2.0の追加機能
+- 希少性、収集価値、交換価値、復刻困難度を個別表示
+- 地域限定、限定背景、衣装、色違い、専用技、特殊フォームのフィルター
+- 「今やること」ダッシュボード
+- 所持コレクション登録
+- 所持済みイベントの自動減点
+- イベント成果記録
+- ICS出力
+- 6時間ごとのイベント自動更新
+- ブラウザ内保存。Pokémon GOアカウントには接続しない
 
-## 評価軸
-海外地域限定、衣装、限定背景、色違い初実装、専用技、幻、特殊フォームを加点。東京で通常入手しやすい対象は減点。所持状況はブラウザ内だけに保存する。
+## 導入
+1. 旧リポジトリをバックアップする。
+2. このZIPの `docs`、`.github`、`README.md` をリポジトリ直下へ上書きアップロードする。
+3. GitHub Pagesは `main / docs` のままでよい。
+4. Actionsで `Update Pokemon GO Events` を手動実行する。
+5. Pages反映後に `Ctrl + Shift + R`。
+6. 古いService Workerが残る場合は、ChromeのF12 → Application → Service Workers → Unregister。
 
-## 注意
-イベント本文の語句による自動評価なので、公式発表前や情報不足のイベントは誤判定があり得る。Pokémon GOアカウントには接続しない。Leek Duck / ScrapedDuckの利用条件上、広告掲載や有料化はしない。
+## データ保存
+所持状況と成果記録はブラウザのlocalStorageへ保存される。
+別端末には自動同期されない。ブラウザデータを消すと消える。
+
+## 制限
+ScrapedDuckのイベントデータに限定背景・地域限定などの情報が明記されない場合、評価を自動判定できないことがある。

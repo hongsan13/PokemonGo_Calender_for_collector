@@ -1,1 +1,9 @@
-{"name": "PoGO Collector Calendar", "short_name": "PoGO Calendar", "start_url": "./", "display": "standalone", "background_color": "#f3f6f5", "theme_color": "#18354a", "lang": "ja"}
+{
+  "name": "PoGO Collector Calendar v2",
+  "short_name": "PoGO Collector",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f2f5f4",
+  "theme_color": "#163748",
+  "lang": "ja"
+}
