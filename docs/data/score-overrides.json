@@ -1,0 +1,43 @@
+[
+  {
+    "nameIncludes": "Special Anniversary Pikachu Celebration",
+    "minScore": 94,
+    "dimensions": {
+      "rarity": 75,
+      "collectionScore": 100,
+      "trade": 72,
+      "rerun": 90
+    },
+    "flags": [
+      "最優先",
+      "複数限定衣装",
+      "ピカチュウ",
+      "色違い対象"
+    ],
+    "reasons": [
+      "複数種類の限定衣装ピカチュウを一度に回収できる",
+      "通常のピカチュウ出現率ではなく、衣装フォーム単位で評価する必要がある",
+      "未所持衣装・衣装別色違いの回収機会として最優先"
+    ],
+    "recommendation": "各衣装の通常色を最低1体ずつ確保。色違いは衣装ごとに別枠。未所持衣装がある限り最優先で参加。"
+  },
+  {
+    "nameIncludes": "Anniversary Pikachu",
+    "minScore": 92,
+    "dimensions": {
+      "rarity": 72,
+      "collectionScore": 98,
+      "trade": 68,
+      "rerun": 86
+    },
+    "flags": [
+      "最優先",
+      "限定衣装",
+      "ピカチュウ"
+    ],
+    "reasons": [
+      "記念衣装ピカチュウは通常個体とは別枠であり、復刻条件が限定的"
+    ],
+    "recommendation": "衣装ごとに通常色1体、色違い1体を目標にする。"
+  }
+]
