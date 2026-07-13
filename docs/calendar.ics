@@ -1,0 +1,41 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//PoGO Collector Calendar v2.2//JA
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:PoGO Collector Calendar
+X-WR-TIMEZONE:Asia/Tokyo
+REFRESH-INTERVAL;VALUE=DURATION:PT6H
+X-PUBLISHED-TTL:PT6H
+BEGIN:VEVENT
+UID:sample-v2-regional@pogo-collector-calendar
+DTSTAMP:20260713T221212Z
+DTSTART:20260714T010000Z
+DTEND:20260720T110000Z
+SUMMARY:[SSS] サンプル：地域限定と限定背景の特別イベ
+ ント
+DESCRIPTION:コレクション評価: 100点 / SSS\n評価理由: 日本
+ では通常入手できない地域限定候補。衣装・装飾フォ
+ ームは別枠コレクション。限定背景は通常個体と別枠
+ 。色違い初実装\n推奨保有: 背景ごとに1体。色違い背
+ 景は別枠で保存。\n分類: 海外限定 / 衣装 / 限定背景 /
+  色違い初実装\n詳細: https://leekduck.com/events/
+URL:https://leekduck.com/events/
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sample-v2-spotlight@pogo-collector-calendar
+DTSTAMP:20260713T221212Z
+DTSTART:20260716T090000Z
+DTEND:20260716T100000Z
+SUMMARY:[C] サンプル：ポッポのスポットライトアワー
+DESCRIPTION:コレクション評価: 22点 / C\n評価理由: 色違い
+ 対象あり\n推奨保有: 未所持なら1体。限定要素が異な
+ る個体は別枠で保存。\n分類: 色違い\n詳細: https://leekd
+ uck.com/events/
+URL:https://leekduck.com/events/
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+END:VCALENDAR

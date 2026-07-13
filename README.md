@@ -1,4 +1,4 @@
-# PoGO Collector Calendar v2.1
+# PoGO Collector Calendar v2.2
 
 東京在住・PvPなし・コレクション重視向けのPokémon GOイベント管理サイト。
 
@@ -51,3 +51,38 @@ ScrapedDuckのイベントデータに限定背景・地域限定などの情報
   "recommendation": "衣装ごとに通常色1体、色違い1体。"
 }
 ```
+
+
+## v2.2: Googleカレンダー自動購読
+
+GitHub Actionsが6時間ごとに以下を実行する。
+
+1. `docs/data/events.json` を更新
+2. `scripts/generate_calendar.py` を実行
+3. `docs/calendar.ics` を更新
+4. GitHub Pagesで公開
+
+公開URLは以下の形式になる。
+
+```text
+https://ユーザー名.github.io/リポジトリ名/calendar.ics
+```
+
+サイト内の「購読URL」ボタンでこのURLをコピーできる。
+
+### Googleカレンダーへの登録
+
+PC版Googleカレンダーで以下を操作する。
+
+1. 左側の「他のカレンダー」の `+`
+2. 「URLで追加」
+3. `calendar.ics` の公開URLを貼り付ける
+4. 「カレンダーを追加」
+
+一度登録すれば、Google側が定期的にICSを再取得する。
+Google側の更新間隔はGoogleが管理するため、GitHub Actions実行直後に即時反映されるとは限らない。
+
+### 重要
+
+同じICSを「インポート」してはいけない。
+自動更新には必ず「URLで追加」を使う。

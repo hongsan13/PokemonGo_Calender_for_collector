@@ -311,6 +311,17 @@ $("#saveCollection").onclick=()=>{const a=collection();a.push({name:$("#collecti
 $("#addResultBtn").onclick=()=>{$("#resultDate").value=new Date().toISOString().slice(0,10);$("#resultDialog").showModal()};
 $("#saveResult").onclick=()=>{const a=results();a.push({name:$("#resultName").value.trim(),date:$("#resultDate").value,shiny:+$("#resultShiny").value,background:+$("#resultBackground").value,regional:+$("#resultRegional").value,move:+$("#resultMove").value,note:$("#resultNote").value.trim()});storage.set("pogoResults",a);$("#resultForm").reset();renderResults();renderSummary()};
 
+
+$("#subscribeBtn").onclick=async()=>{
+  const url=new URL("./calendar.ics",window.location.href).href;
+  try{
+    await navigator.clipboard.writeText(url);
+    alert(`購読URLをコピーした。\n\n${url}\n\nGoogleカレンダーで「他のカレンダー」→「URLで追加」に貼り付ける。`);
+  }catch{
+    prompt("このURLをコピーし、Googleカレンダーの「URLで追加」に貼り付ける。",url);
+  }
+};
+
 $("#icsBtn").onclick=()=>{
   const esc=s=>String(s||"").replace(/\\/g,"\\\\").replace(/,/g,"\\,").replace(/;/g,"\\;").replace(/\r?\n/g,"\\n");
   const fd=v=>{const x=d(v);return x?x.toISOString().replace(/[-:]/g,"").replace(/\.\d{3}/,""):null};
