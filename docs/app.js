@@ -4,6 +4,45 @@ const FALLBACK_URL="https://raw.githubusercontent.com/bigfoott/ScrapedDuck/data/
 
 let allEvents=[];
 let filter="all";
+let scoreOverrides=[];
+
+const COLLECTOR_EVENT_RULES = [
+  {
+    id: "pikachu-anniversary-celebration",
+    titleAll: ["pikachu"],
+    titleAny: ["anniversary", "celebration", "アニバーサリー", "記念", "セレブレーション"],
+    minScore: 92,
+    dimensions: { rarity: 72, collectionScore: 98, trade: 70, rerun: 88 },
+    flags: ["最優先", "複数限定衣装", "ピカチュウ"],
+    reasons: [
+      "複数の限定ピカチュウをまとめて回収できるコレクション特化イベント",
+      "同じ衣装群が一括復刻する保証がなく、未所持フォーム回収を最優先すべき"
+    ],
+    recommendation: "各衣装の通常色を1体ずつ確保。色違いは衣装ごとに別枠。未所持衣装がある限り最優先で参加。"
+  },
+  {
+    id: "multi-costume-event",
+    textAny: [
+      "multiple costumed", "different costumed", "costumed pikachu",
+      "three celebrations", "various costumed", "複数の衣装", "さまざまな衣装",
+      "歴代衣装", "異なる衣装"
+    ],
+    minScore: 88,
+    dimensions: { rarity: 68, collectionScore: 95, trade: 62, rerun: 82 },
+    flags: ["最優先", "複数限定衣装"],
+    reasons: ["複数の衣装違いを同時に収集できるため、単体の通常出現イベントより大幅に価値が高い"],
+    recommendation: "衣装ごとに通常色1体。色違いは別枠。未所持衣装を優先して埋める。"
+  },
+  {
+    id: "fashion-costume-collection",
+    titleAny: ["fashion week", "ファッションウィーク", "costume celebration", "衣装イベント"],
+    minScore: 82,
+    dimensions: { rarity: 60, collectionScore: 92, trade: 55, rerun: 76 },
+    flags: ["衣装集中イベント"],
+    reasons: ["衣装違いは通常フォームと別コレクションであり、復刻時期が不定"],
+    recommendation: "新規衣装を各1体。過去衣装は未所持のみ。色違い衣装は必ず別枠保存。"
+  }
+];
 const $=s=>document.querySelector(s);
 const $$=s=>[...document.querySelectorAll(s)];
 
@@ -25,9 +64,30 @@ function ownedMatch(e){
   return collection().filter(x=>t.includes((x.name||"").toLowerCase()));
 }
 
+function ruleMatches(rule,e,t){
+  const title=(e.name||"").toLowerCase();
+  const all=(rule.titleAll||[]).every(x=>title.includes(x.toLowerCase()));
+  const titleAny=!rule.titleAny?.length||(rule.titleAny||[]).some(x=>title.includes(x.toLowerCase()));
+  const textAny=!rule.textAny?.length||(rule.textAny||[]).some(x=>t.includes(x.toLowerCase()));
+  return all&&titleAny&&textAny;
+}
+
+function findManualOverride(e){
+  const name=(e.name||"").toLowerCase();
+  const id=String(e.eventID||"").toLowerCase();
+  return scoreOverrides.find(o=>{
+    if(o.eventID&&String(o.eventID).toLowerCase()===id)return true;
+    if(o.nameIncludes&&name.includes(String(o.nameIncludes).toLowerCase()))return true;
+    if(Array.isArray(o.nameIncludesAny)&&o.nameIncludesAny.some(x=>name.includes(String(x).toLowerCase())))return true;
+    return false;
+  });
+}
+
 function evaluate(e){
   const t=text(e),s=settings(),owned=ownedMatch(e);
   let rarity=20,collectionScore=20,trade=10,rerun=50;
+  let scoreFloor=0;
+  let forcedRecommendation="";
   const reasons=[],flags=[],targets=[];
   const add=(dim,n,reason,flag)=>{
     if(dim==="rarity")rarity+=n;
@@ -45,7 +105,7 @@ function evaluate(e){
     add("rarity",38,"日本では通常入手できない地域限定候補","海外限定");
     add("trade",28,"交換材料として需要が出やすい");
   }
-  if(hasAny(t,["costume","hat","visor","flower crown","衣装","帽子","バイザー"])){
+  if(hasAny(t,["costume","costumed","outfit","hat","visor","flower crown","衣装","帽子","バイザー"])){
     add("collection",27,"衣装・装飾フォームは別枠コレクション","衣装");
     add("rerun",12,"同じ衣装の復刻時期は不定");
   }
@@ -91,14 +151,49 @@ function evaluate(e){
     if(typeof o==="object"){if(typeof o.name==="string")targets.push(o.name);Object.values(o).forEach(walk)}
   };walk(e.extraData||{});
 
+  // Fail-safe collector rules: title-only dataでも大型衣装イベントを低評価にしない。
+  for(const rule of COLLECTOR_EVENT_RULES){
+    if(!ruleMatches(rule,e,t))continue;
+    scoreFloor=Math.max(scoreFloor,rule.minScore||0);
+    rarity=Math.max(rarity,rule.dimensions?.rarity||0);
+    collectionScore=Math.max(collectionScore,rule.dimensions?.collectionScore||0);
+    trade=Math.max(trade,rule.dimensions?.trade||0);
+    rerun=Math.max(rerun,rule.dimensions?.rerun||0);
+    reasons.push(...(rule.reasons||[]));
+    flags.push(...(rule.flags||[]));
+    if(rule.recommendation)forcedRecommendation=rule.recommendation;
+  }
+
+  // User-editable manual overrides. New collector events can be corrected without changing app.js.
+  const override=findManualOverride(e);
+  if(override){
+    scoreFloor=Math.max(scoreFloor,Number(override.minScore)||0);
+    rarity=Math.max(rarity,Number(override.dimensions?.rarity)||0);
+    collectionScore=Math.max(collectionScore,Number(override.dimensions?.collectionScore)||0);
+    trade=Math.max(trade,Number(override.dimensions?.trade)||0);
+    rerun=Math.max(rerun,Number(override.dimensions?.rerun)||0);
+    reasons.push(...(override.reasons||[]));
+    flags.push(...(override.flags||["手動補正"]));
+    if(override.recommendation)forcedRecommendation=override.recommendation;
+  }
+
   rarity=Math.max(0,Math.min(100,rarity));
   collectionScore=Math.max(0,Math.min(100,collectionScore));
   trade=Math.max(0,Math.min(100,trade));
   rerun=Math.max(0,Math.min(100,rerun*s.rerunWeight));
-  const score=Math.round(rarity*.35+collectionScore*.4+trade*.1+rerun*.15);
+  let score=Math.round(rarity*.35+collectionScore*.4+trade*.1+rerun*.15);
+  score=Math.max(score,scoreFloor);
   const tier=score>=90?"SSS":score>=75?"SS":score>=60?"S":score>=42?"A":score>=25?"B":"C";
 
-  return {score,tier,rarity,collectionScore,trade,rerun,reasons:[...new Set(reasons)],flags:[...new Set(flags)],targets:[...new Set(targets)].slice(0,8),owned};
+  return {
+    score,tier,rarity,collectionScore,trade,rerun,
+    reasons:[...new Set(reasons)],
+    flags:[...new Set(flags)],
+    targets:[...new Set(targets)].slice(0,8),
+    owned,
+    forcedRecommendation,
+    scoreFloor
+  };
 }
 
 function d(v){if(!v)return null;const x=new Date(v);return Number.isNaN(x.getTime())?null:x}
@@ -106,6 +201,7 @@ function fmt(v){const x=d(v);return x?new Intl.DateTimeFormat("ja-JP",{month:"nu
 function active(e){const n=Date.now(),a=d(e.start)?.getTime()??Infinity,b=d(e.end)?.getTime()??-Infinity;return a<=n&&n<=b}
 
 function recommend(v){
+  if(v.forcedRecommendation)return v.forcedRecommendation;
   if(v.flags.includes("限定背景"))return "背景ごとに1体。色違い背景は別枠で保存。";
   if(v.flags.includes("衣装"))return "衣装ごとに通常色1体。色違いは別枠1体。";
   if(v.flags.includes("海外限定"))return "通常色1体＋色違い1体。交換用は余裕があれば+1。";
@@ -196,6 +292,7 @@ async function load(){
   try{
     let data,src="同梱データ";
     try{data=await fetchJson(DATA_URL)}catch{data=await fetchJson(FALLBACK_URL);src="ScrapedDuck直接取得"}
+    try{scoreOverrides=await fetchJson("./data/score-overrides.json")}catch{scoreOverrides=[]}
     const cutoff=Date.now()-3*864e5;
     allEvents=data.filter(e=>!e.end||(d(e.end)?.getTime()||0)>cutoff).map(e=>({...e,_eval:evaluate(e)}));
     $("#updated").textContent=`最終更新: ${new Date().toLocaleString("ja-JP")} / ${src}`;
