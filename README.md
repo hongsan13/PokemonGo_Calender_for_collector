@@ -1,4 +1,4 @@
-# PoGO Collector Calendar v2.0
+# PoGO Collector Calendar v2.1
 
 東京在住・PvPなし・コレクション重視向けのPokémon GOイベント管理サイト。
 
@@ -27,3 +27,27 @@
 
 ## 制限
 ScrapedDuckのイベントデータに限定背景・地域限定などの情報が明記されない場合、評価を自動判定できないことがある。
+
+
+## v2.1の評価事故防止
+- 「Pikachu」＋「Anniversary / Celebration」などを含むイベントは、複数衣装回収イベントとして最低SSS相当に補正する。
+- イベント詳細データが不足していても、タイトルだけで重要コレクションイベントを判定する。
+- `docs/data/score-overrides.json` で、イベント名ごとの最低点・各評価軸・理由・推奨保有数を追加できる。
+- 自動判定と手動オーバーライドの両方を使うため、新しい限定背景・衣装イベントが低評価になる事故を修正しやすい。
+
+### score-overrides.jsonの例
+```json
+{
+  "nameIncludes": "Pikachu Celebration",
+  "minScore": 92,
+  "dimensions": {
+    "rarity": 70,
+    "collectionScore": 98,
+    "trade": 65,
+    "rerun": 85
+  },
+  "flags": ["最優先", "複数限定衣装"],
+  "reasons": ["複数の衣装違いを同時に回収できる"],
+  "recommendation": "衣装ごとに通常色1体、色違い1体。"
+}
+```
