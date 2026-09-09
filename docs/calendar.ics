@@ -8,55 +8,8 @@ X-WR-TIMEZONE:Asia/Tokyo
 REFRESH-INTERVAL;VALUE=DURATION:PT6H
 X-PUBLISHED-TTL:PT6H
 BEGIN:VEVENT
-UID:shadow-giratina-altered-in-shadow-raids-august-2026@pogo-collector-ca
- lendar
-DTSTAMP:20260909T112715Z
-DTSTART:20260804T210000Z
-DTEND:20260908T130000Z
-SUMMARY:[B] Shadow Giratina (Altered Forme) in Shadow Raids
-DESCRIPTION:コレクション評価: 30点 / B\n評価理由: 色違い
- 対象あり\n推奨保有: 未所持なら1体。限定要素が異な
- る個体は別枠で保存。\n分類: 色違い\n詳細: https://leekd
- uck.com/events/shadow-giratina-altered-in-shadow-raids-august-2026/
-URL:https://leekduck.com/events/shadow-giratina-altered-in-shadow-raids-a
- ugust-2026/
-STATUS:CONFIRMED
-TRANSP:TRANSPARENT
-END:VEVENT
-BEGIN:VEVENT
-UID:mega-gyarados-in-mega-raids-august-2026@pogo-collector-calendar
-DTSTAMP:20260909T112715Z
-DTSTART:20260825T210000Z
-DTEND:20260908T130000Z
-SUMMARY:[B] Mega Gyarados in Mega Raids
-DESCRIPTION:コレクション評価: 30点 / B\n評価理由: 色違い
- 対象あり\n推奨保有: 未所持なら1体。限定要素が異な
- る個体は別枠で保存。\n分類: 色違い\n詳細: https://leekd
- uck.com/events/mega-gyarados-in-mega-raids-august-2026/
-URL:https://leekduck.com/events/mega-gyarados-in-mega-raids-august-2026/
-STATUS:CONFIRMED
-TRANSP:TRANSPARENT
-END:VEVENT
-BEGIN:VEVENT
-UID:regirock-regice-registeel-in-5-star-raid-battles-august-2026@pogo-col
- lector-calendar
-DTSTAMP:20260909T112715Z
-DTSTART:20260825T210000Z
-DTEND:20260908T130000Z
-SUMMARY:[B] Regirock\, Regice\, and Registeel in 5-star Raid Battles
-DESCRIPTION:コレクション評価: 30点 / B\n評価理由: 色違い
- 対象あり\n推奨保有: 未所持なら1体。限定要素が異な
- る個体は別枠で保存。\n分類: 色違い\n詳細: https://leekd
- uck.com/events/regirock-regice-registeel-in-5-star-raid-battles-august-2
- 026/
-URL:https://leekduck.com/events/regirock-regice-registeel-in-5-star-raid-
- battles-august-2026/
-STATUS:CONFIRMED
-TRANSP:TRANSPARENT
-END:VEVENT
-BEGIN:VEVENT
 UID:raidhour20260909@pogo-collector-calendar
-DTSTAMP:20260909T112715Z
+DTSTAMP:20260909T164045Z
 DTSTART:20260909T090000Z
 DTEND:20260909T100000Z
 SUMMARY:[C] Zacian (Hero of Many Battles) Raid Hour
@@ -70,7 +23,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:pokemonspotlighthour2026-09-10@pogo-collector-calendar
-DTSTAMP:20260909T112715Z
+DTSTAMP:20260909T164045Z
 DTSTART:20260910T090000Z
 DTEND:20260910T100000Z
 SUMMARY:[C] Weedle\, Kakuna\, and Beedrill Spotlight Hour
@@ -84,7 +37,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:september-communitydayclassic2026@pogo-collector-calendar
-DTSTAMP:20260909T112715Z
+DTSTAMP:20260909T164045Z
 DTSTART:20260912T050000Z
 DTEND:20260912T080000Z
 SUMMARY:[B] Gible Community Day Classic
@@ -98,7 +51,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:pokemonspotlighthour2026-09-13@pogo-collector-calendar
-DTSTAMP:20260909T112715Z
+DTSTAMP:20260909T164045Z
 DTSTART:20260913T090000Z
 DTEND:20260913T100000Z
 SUMMARY:[C] Houndour and Houndoom Spotlight Hour
@@ -112,7 +65,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:mega-squads@pogo-collector-calendar
-DTSTAMP:20260909T112715Z
+DTSTAMP:20260909T164045Z
 DTSTART:20260908T010000Z
 DTEND:20260914T110000Z
 SUMMARY:[C] Mega Squads
@@ -126,7 +79,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:max-mondays-2026-09-14@pogo-collector-calendar
-DTSTAMP:20260909T112715Z
+DTSTAMP:20260909T164045Z
 DTSTART:20260913T210000Z
 DTEND:20260914T120000Z
 SUMMARY:[C] Dynamax Rhyhorn during Max Monday
@@ -141,7 +94,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:gbl-twilight-trails_great-league-mega-edition_ultra-league-mega-editi
  on_master-league-mega-edition-split-1@pogo-collector-calendar
-DTSTAMP:20260909T112715Z
+DTSTAMP:20260909T164045Z
 DTSTART:20260908T200000Z
 DTEND:20260915T200000Z
 SUMMARY:[C] Great League: Mega Edition\, Ultra League: Mega Edition\, and
@@ -158,7 +111,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:mega-beedrill-in-mega-raids-september-2026@pogo-collector-calendar
-DTSTAMP:20260909T112715Z
+DTSTAMP:20260909T164045Z
 DTSTART:20260907T210000Z
 DTEND:20260915T130000Z
 SUMMARY:[B] Mega Beedrill in Mega Raids
@@ -174,7 +127,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:zacian-hero-of-many-battles-in-5-star-raid-battles-september-2026@pog
  o-collector-calendar
-DTSTAMP:20260909T112715Z
+DTSTAMP:20260909T164045Z
 DTSTART:20260908T210000Z
 DTEND:20260915T130000Z
 SUMMARY:[B] Zacian (Hero of Many Battles) in 5-star Raid Battles
@@ -190,7 +143,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:mega-houndoom-in-mega-raids-september-2026@pogo-collector-calendar
-DTSTAMP:20260909T112715Z
+DTSTAMP:20260909T164045Z
 DTSTART:20260910T210000Z
 DTEND:20260915T130000Z
 SUMMARY:[B] Mega Houndoom in Mega Raids
@@ -205,7 +158,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:raidhour20260916@pogo-collector-calendar
-DTSTAMP:20260909T112715Z
+DTSTAMP:20260909T164045Z
 DTSTART:20260916T090000Z
 DTEND:20260916T100000Z
 SUMMARY:[C] Zamazenta (Hero of Many Battles) Raid Hour
@@ -219,7 +172,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:pokemonspotlighthour2026-09-17@pogo-collector-calendar
-DTSTAMP:20260909T112715Z
+DTSTAMP:20260909T164045Z
 DTSTART:20260917T090000Z
 DTEND:20260917T100000Z
 SUMMARY:[C] Mystery Pokémon Spotlight Hour
@@ -233,7 +186,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:staraptor-super-mega-raid-day-2026@pogo-collector-calendar
-DTSTAMP:20260909T112715Z
+DTSTAMP:20260909T164045Z
 DTSTART:20260919T050000Z
 DTEND:20260919T080000Z
 SUMMARY:[C] Staraptor Super Mega Raid Day
@@ -247,7 +200,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:max-mondays-2026-09-21@pogo-collector-calendar
-DTSTAMP:20260909T112715Z
+DTSTAMP:20260909T164045Z
 DTSTART:20260920T210000Z
 DTEND:20260921T120000Z
 SUMMARY:[C] Dynamax Articuno\, Zapdos\, and Moltres during Max Monday
@@ -262,7 +215,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:gbl-twilight-trails_great-league_ultra-league-mega-edition_willpower-
  cup-great-league-edition@pogo-collector-calendar
-DTSTAMP:20260909T112715Z
+DTSTAMP:20260909T164045Z
 DTSTART:20260915T200000Z
 DTEND:20260922T200000Z
 SUMMARY:[C] Great League\, Ultra League: Mega Edition\, and Willpower Cup
@@ -280,7 +233,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:pokemon-horizons-the-series-celebration-event-2026@pogo-collector-cal
  endar
-DTSTAMP:20260909T112715Z
+DTSTAMP:20260909T164045Z
 DTSTART:20260916T010000Z
 DTEND:20260922T110000Z
 SUMMARY:[C] Pokémon Horizons: The Series Celebration Event
@@ -295,7 +248,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:mega-venusaur-in-mega-raids-september-2026@pogo-collector-calendar
-DTSTAMP:20260909T112715Z
+DTSTAMP:20260909T164045Z
 DTSTART:20260915T210000Z
 DTEND:20260922T130000Z
 SUMMARY:[B] Mega Venusaur in Mega Raids
@@ -311,7 +264,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:zamazenta-hero-of-many-battles-in-5-star-raid-battles-september-2026@
  pogo-collector-calendar
-DTSTAMP:20260909T112715Z
+DTSTAMP:20260909T164045Z
 DTSTART:20260915T210000Z
 DTEND:20260922T130000Z
 SUMMARY:[B] Zamazenta (Hero of Many Battles) in 5-star Raid Battles
@@ -327,7 +280,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:raidhour20260923@pogo-collector-calendar
-DTSTAMP:20260909T112715Z
+DTSTAMP:20260909T164045Z
 DTSTART:20260923T090000Z
 DTEND:20260923T100000Z
 SUMMARY:[C] Xurkitree\, Pheromosa\, and Buzzwole Raid Hour
@@ -341,7 +294,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:pokemonspotlighthour2026-09-24@pogo-collector-calendar
-DTSTAMP:20260909T112715Z
+DTSTAMP:20260909T164045Z
 DTSTART:20260924T090000Z
 DTEND:20260924T100000Z
 SUMMARY:[C] Rattata Spotlight Hour
@@ -355,7 +308,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:catch-mastery-phantump-2026@pogo-collector-calendar
-DTSTAMP:20260909T112715Z
+DTSTAMP:20260909T164045Z
 DTSTART:20260926T010000Z
 DTEND:20260926T110000Z
 SUMMARY:[C] Phantump Catch Mastery
@@ -369,7 +322,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:max-mondays-2026-09-28@pogo-collector-calendar
-DTSTAMP:20260909T112715Z
+DTSTAMP:20260909T164045Z
 DTSTART:20260927T210000Z
 DTEND:20260928T120000Z
 SUMMARY:[C] Dynamax Sobble during Max Monday
@@ -384,7 +337,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:gbl-twilight-trails_ultra-league_master-league-mega-edition_retro-cup
  -great-league-edition@pogo-collector-calendar
-DTSTAMP:20260909T112715Z
+DTSTAMP:20260909T164045Z
 DTSTART:20260922T200000Z
 DTEND:20260929T200000Z
 SUMMARY:[C] Ultra League\, Master League: Mega Edition\, and Retro Cup: G
@@ -401,7 +354,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:mega-malamar-in-mega-raids-september-2026@pogo-collector-calendar
-DTSTAMP:20260909T112715Z
+DTSTAMP:20260909T164045Z
 DTSTART:20260922T210000Z
 DTEND:20260929T130000Z
 SUMMARY:[B] Mega Malamar in Mega Raids
@@ -417,7 +370,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:xurkitree-pheromosa-buzzwole-in-5-star-raid-battles-september-2026@po
  go-collector-calendar
-DTSTAMP:20260909T112715Z
+DTSTAMP:20260909T164045Z
 DTSTART:20260922T210000Z
 DTEND:20260929T130000Z
 SUMMARY:[B] Xurkitree\, Pheromosa\, and Buzzwole in 5-star Raid Battles
@@ -433,7 +386,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:raidhour20260930@pogo-collector-calendar
-DTSTAMP:20260909T112715Z
+DTSTAMP:20260909T164045Z
 DTSTART:20260930T090000Z
 DTEND:20260930T100000Z
 SUMMARY:[C] Xerneas Raid Hour
@@ -447,7 +400,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:lego-pokemon-go-2026@pogo-collector-calendar
-DTSTAMP:20260909T112715Z
+DTSTAMP:20260909T164045Z
 DTSTART:20260803T010000Z
 DTEND:20260930T145900Z
 SUMMARY:[C] LEGO Stores and Pokémon GO
@@ -461,7 +414,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:max-battle-day-october-2026@pogo-collector-calendar
-DTSTAMP:20260909T112715Z
+DTSTAMP:20260909T164045Z
 DTSTART:20261003T050000Z
 DTEND:20261003T080000Z
 SUMMARY:[C] Max Battle Day
@@ -475,7 +428,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:harvest-festival-2026@pogo-collector-calendar
-DTSTAMP:20260909T112715Z
+DTSTAMP:20260909T164045Z
 DTSTART:20260929T010000Z
 DTEND:20261005T110000Z
 SUMMARY:[C] Harvest Festival 2026: Applin Picking
@@ -489,7 +442,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:harvest-festival-taken-over-2026@pogo-collector-calendar
-DTSTAMP:20260909T112715Z
+DTSTAMP:20260909T164045Z
 DTSTART:20261001T150000Z
 DTEND:20261005T110000Z
 SUMMARY:[C] Harvest Festival: Taken Over
@@ -503,7 +456,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:go-pass-september-2026@pogo-collector-calendar
-DTSTAMP:20260909T112715Z
+DTSTAMP:20260909T164045Z
 DTSTART:20260908T010000Z
 DTEND:20261006T010000Z
 SUMMARY:[C] GO Pass: September
@@ -518,7 +471,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:gbl-twilight-trails_master-league_mega-color-cup-great-league-edition
  @pogo-collector-calendar
-DTSTAMP:20260909T112715Z
+DTSTAMP:20260909T164045Z
 DTSTART:20260929T200000Z
 DTEND:20261006T200000Z
 SUMMARY:[C] Master League and Mega Color Cup: Great League Edition | Twil
@@ -535,7 +488,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:shadow-thundurus-incarnate-forme-in-shadow-raids-september-2026@pogo-
  collector-calendar
-DTSTAMP:20260909T112715Z
+DTSTAMP:20260909T164045Z
 DTSTART:20260908T210000Z
 DTEND:20261006T130000Z
 SUMMARY:[B] Shadow Thundurus (Incarnate Forme) in Shadow Raids
@@ -551,7 +504,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:mega-victreebel-in-mega-raids-september-2026@pogo-collector-calendar
-DTSTAMP:20260909T112715Z
+DTSTAMP:20260909T164045Z
 DTSTART:20260929T210000Z
 DTEND:20261006T130000Z
 SUMMARY:[B] Mega Victreebel in Mega Raids
@@ -566,7 +519,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:xerneas-in-5-star-raid-battles-september-2026@pogo-collector-calendar
-DTSTAMP:20260909T112715Z
+DTSTAMP:20260909T164045Z
 DTSTART:20260929T210000Z
 DTEND:20261006T130000Z
 SUMMARY:[B] Xerneas in 5-star Raid Battles
@@ -581,7 +534,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:october-communityday2026@pogo-collector-calendar
-DTSTAMP:20260909T112715Z
+DTSTAMP:20260909T164045Z
 DTSTART:20261010T050000Z
 DTEND:20261010T080000Z
 SUMMARY:[C] October Community Day
@@ -596,7 +549,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:gbl-twilight-trails_great-league-mega-edition_ultra-league-mega-editi
  on_master-league-mega-edition-split-2@pogo-collector-calendar
-DTSTAMP:20260909T112715Z
+DTSTAMP:20260909T164045Z
 DTSTART:20261006T200000Z
 DTEND:20261013T200000Z
 SUMMARY:[C] Great League: Mega Edition\, Ultra League: Mega Edition\, and
@@ -613,7 +566,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:hatch-day-october-2026@pogo-collector-calendar
-DTSTAMP:20260909T112715Z
+DTSTAMP:20260909T164045Z
 DTSTART:20261017T020000Z
 DTEND:20261017T080000Z
 SUMMARY:[A] Hatch Day
@@ -628,7 +581,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:gbl-twilight-trails_great-league_ultra-league-mega-edition_little-cup
  @pogo-collector-calendar
-DTSTAMP:20260909T112715Z
+DTSTAMP:20260909T164045Z
 DTSTART:20261013T200000Z
 DTEND:20261020T200000Z
 SUMMARY:[C] Great League\, Ultra League: Mega Edition\, and Little Cup | 
@@ -644,7 +597,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:max-battle-day-october-24-2026@pogo-collector-calendar
-DTSTAMP:20260909T112715Z
+DTSTAMP:20260909T164045Z
 DTSTART:20261024T050000Z
 DTEND:20261024T080000Z
 SUMMARY:[C] Max Battle Day
@@ -659,7 +612,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:gbl-twilight-trails_ultra-league_master-league-mega-edition_fantasy-c
  up-great-league-edition@pogo-collector-calendar
-DTSTAMP:20260909T112715Z
+DTSTAMP:20260909T164045Z
 DTSTART:20261020T200000Z
 DTEND:20261027T200000Z
 SUMMARY:[C] Ultra League\, Master League: Mega Edition\, and Fantasy Cup:
@@ -676,7 +629,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:super-mega-raid-day-october-2026@pogo-collector-calendar
-DTSTAMP:20260909T112715Z
+DTSTAMP:20260909T164045Z
 DTSTART:20261031T050000Z
 DTEND:20261031T080000Z
 SUMMARY:[C] Super Mega Raid Day
@@ -691,7 +644,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:gbl-twilight-trails_master-league_mega-halloween-cup-great-league-edi
  tion@pogo-collector-calendar
-DTSTAMP:20260909T112715Z
+DTSTAMP:20260909T164045Z
 DTSTART:20261027T210000Z
 DTEND:20261103T210000Z
 SUMMARY:[C] Master League and Mega Halloween Cup: Great League Edition | 
@@ -708,7 +661,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:gbl-twilight-trails_great-league-mega-edition_ultra-league-mega-editi
  on_master-league-mega-edition-split-3@pogo-collector-calendar
-DTSTAMP:20260909T112715Z
+DTSTAMP:20260909T164045Z
 DTSTART:20261103T210000Z
 DTEND:20261110T210000Z
 SUMMARY:[C] Great League: Mega Edition\, Ultra League: Mega Edition\, and
@@ -726,7 +679,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:gbl-twilight-trails_great-league_ultra-league-mega-edition_2026-go-la
  ic-cup@pogo-collector-calendar
-DTSTAMP:20260909T112715Z
+DTSTAMP:20260909T164045Z
 DTSTART:20261110T210000Z
 DTEND:20261117T210000Z
 SUMMARY:[C] Great League\, Ultra League: Mega Edition\, and 2026 GO LAIC 
@@ -742,7 +695,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:november-communityday2026@pogo-collector-calendar
-DTSTAMP:20260909T112715Z
+DTSTAMP:20260909T164045Z
 DTSTART:20261121T050000Z
 DTEND:20261121T080000Z
 SUMMARY:[C] November Community Day
@@ -757,7 +710,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:gbl-twilight-trails_ultra-league_master-league-mega-edition_2026-go-l
  aic-cup@pogo-collector-calendar
-DTSTAMP:20260909T112715Z
+DTSTAMP:20260909T164045Z
 DTSTART:20261118T210000Z
 DTEND:20261125T210000Z
 SUMMARY:[C] Ultra League\, Master League: Mega Edition\, and 2026 GO LAIC
@@ -773,7 +726,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:super-mega-raid-day-november-2026@pogo-collector-calendar
-DTSTAMP:20260909T112715Z
+DTSTAMP:20260909T164045Z
 DTSTART:20261128T050000Z
 DTEND:20261128T080000Z
 SUMMARY:[C] Super Mega Raid Day
@@ -787,7 +740,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:season-24-twilight-trails@pogo-collector-calendar
-DTSTAMP:20260909T112715Z
+DTSTAMP:20260909T164045Z
 DTSTART:20260908T010000Z
 DTEND:20261201T010000Z
 SUMMARY:[C] Twilight Trails
@@ -802,7 +755,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:gbl-twilight-trails_master-league_mega-catch-cup-great-league-edition
  @pogo-collector-calendar
-DTSTAMP:20260909T112715Z
+DTSTAMP:20260909T164045Z
 DTSTART:20261124T210000Z
 DTEND:20261201T210000Z
 SUMMARY:[C] Master League and Mega Catch Cup: Great League Edition | Twil
